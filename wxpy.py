@@ -33,8 +33,8 @@ bot = Bot(cache_path=True)
 def forward_message(msg):
     bot_name = "@" + (str(msg.bot).replace("<Bot: ","").replace(">",""))
     #print(msg)
-    if bot_name in str(msg.text) or "@Fisher" in str(msg.text):
-        print("收到",msg.text)
+    if bot_name in str(msg.text):
+        print(msg.text)
         if msg.type == "Text":
             msgs = str(msg.text).replace(bot_name,"")
             return auto_reply(msgs)
